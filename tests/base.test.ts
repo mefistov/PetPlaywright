@@ -4,8 +4,9 @@ import dotenv from 'dotenv';
 
 
 dotenv.config();
-test('base test', async ({page}) => {
+test('base test', asgit ync ({page}) => {
     const mainPage = new MainPage(page);
-    mainPage.open();
-    
+    mainPage.open()
+    mainPage.login();
+
 });

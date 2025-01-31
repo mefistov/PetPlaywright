@@ -13,28 +13,36 @@ export class BasePage{
 
         } catch (error) {   
             console.log(`Error navigating to ${url}: ${error}`);
+            await this.page.screenshot({path: `screenShots/${Date.now()}.png`});
+            throw error;
         };
 
     }
 
     async waitForElement(selector: string){
-        await this.page.waitForSelector(selector)
+        try{
+            await this.page.waitForSelector(selector)
+            } catch (error){
+                await this.page.screenshot({path: `screenShots/${Date.now()}.png`});
+                throw error;
+            }
     }
 
     async makeScreenShot(id: string){
-        await this.page.screenshot({path: `screenShots/${id}.png`})
+        await this.page.screenshot({path: `screenShots/${Date.now()}.png`})
     }
 
     async validateUrl(url: string){
         try{
         expect(this.page.url()).toBe(url)
         } catch (error){
-            console.log(`Error validating url: ${this.page.url()}`)
+            await this.page.screenshot({path: `screenShots/${Date.now()}.png`});
+            throw error;
         }
 
     }
 
-    getLocator(selector: string): Locator{
+    getLocator(selector: string): Locator {
         return this.page.locator(selector);
     }
 
