@@ -1,25 +1,23 @@
-import {test, expect, Page} from '@playwright/test';
+import { test } from '@playwright/test';
 import { MainPage } from '../pages/MainPage';
 import { setup, tearDown } from '../test-setup';
 import dotenv from 'dotenv';
 
-
 dotenv.config();
 
-let page: Page;
+let page: any;
 
-test.beforeAll( async() => {
+test.beforeAll(async () => {
     const setupResult = await setup();
     page = setupResult.page;
-})
+});
 
-test.afterAll( async() => {
-    await tearDown()
-})
+test.afterAll(async () => {
+    await tearDown();
+});
 
-test('base test', async ({page}) => {
+test('base test', async () => {
     const mainPage = new MainPage(page);
-    mainPage.open();
-    //mainPage.login();
-
+    await mainPage.open();
+    await mainPage.login();
 });

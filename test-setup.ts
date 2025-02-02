@@ -9,7 +9,7 @@ export const setup = async () => {
     context = await browser.newContext();
     page = await context.newPage();
 
-    return {browser, context, page};
+    return { browser, context, page };
 }
 
 export const tearDown = async () => {
