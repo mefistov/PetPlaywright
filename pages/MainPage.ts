@@ -22,8 +22,10 @@ export class MainPage extends BasePage{
     }
     
     async open(): Promise<MainPage> {
-        console.log(`Page was successfully loaded  url: ${this.pageUrl}`);
+        
         this.navigateTo(this.pageUrl);
+        console.log(`Page was successfully loaded  url: ${this.pageUrl}`);
+        this.page.pause()
         this.validateUrl(this.pageUrl);
         return this;
     }

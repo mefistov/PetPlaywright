@@ -1,0 +1,2 @@
+Page was successfully loaded  url: https://rozetka.com.ua
+Current url loading: about:blank /n Expected url: https://rozetka.com.ua

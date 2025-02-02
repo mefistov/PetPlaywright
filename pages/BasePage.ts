@@ -10,7 +10,7 @@ export class BasePage{
     async navigateTo(url: string){
         try{
             await this.page.goto(url, {waitUntil:'networkidle'});
-
+            this.page.screenshot({path: `screenShots/${Date.now()}.png`});
         } catch (error) {   
             console.log(`Error navigating to ${url}: ${error}`);
             await this.page.screenshot({path: `screenShots/${Date.now()}.png`});
@@ -34,7 +34,8 @@ export class BasePage{
 
     async validateUrl(url: string){
         try{
-        expect(this.page.url()).toBe(url)
+            console.log(`Current url loading: ${this.page.url()} /n Expected url: ${url}`);
+            expect(this.page.url()).toBe(url)
         } catch (error){
             await this.page.screenshot({path: `screenShots/${Date.now()}.png`});
             throw error;
