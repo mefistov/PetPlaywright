@@ -4,6 +4,8 @@ export default defineConfig({
     retries: 2,
     maxFailures: 3,
     use: {
+        //browserName: 'chromium',
+        //channel: 'chrome',
         baseURL: process.env.BASE_URL,
         headless: false,
         screenshot: 'only-on-failure',

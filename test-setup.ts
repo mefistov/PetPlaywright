@@ -6,7 +6,12 @@ let page: Page;
 
 export const setup = async () => {
     browser = await chromium.launch();
-    context = await browser.newContext();
+    context = await browser.newContext({
+        locale: 'en-US',
+        timezoneId: 'Europe/Warsaw',
+        permissions: ['geolocation'],
+        geolocation: { latitude: 51.107883, longitude: 17.038538 }
+      });
     page = await context.newPage();
     page.setExtraHTTPHeaders({
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36',

@@ -1,26 +1,20 @@
 import { BasePage } from './BasePage';
+import { HeaderElement } from '../PageElements/HeaderElement';
+import { LoginPage } from './LoginPage';
 import { Page } from "@playwright/test";
 import dotenv from 'dotenv';
 
 dotenv.config();
 
 export class MainPage extends BasePage {
+    loginPage: LoginPage;
     private pageUrl: string;
-    private userLogin: string;
-    private password: string;
-    private loginModale: string = '.modal-layout';
-    private authRouteButton: string = 'rz-app-root >> ul > li:nth-child(4) >> rz-auth-icon >> button';
-    private loginViaMailButton: string = "//button[contains(text(),'Увійти через пошту')]";
-    private emailInput: string = '.email__input';
-    private passwordInput: string = '.password__input';
-    private submitButton: string = '.submit-button__bottom';
-    private cloudFlairIframe = 'iframe';
+    private loginButtton = this.page.getByRole('button', { name: ' My account' });
+    headerElement: HeaderElement;
 
     constructor(page: Page) {
         super(page);
         this.pageUrl = process.env.URL || '';
-        this.userLogin = process.env.USER_LOGIN || '';
-        this.password = process.env.USER_PASSWORD || '';
     }
 
     async open(): Promise<MainPage> {
@@ -36,42 +30,13 @@ export class MainPage extends BasePage {
         return this;
     }
 
-    async handleCloudflare(): Promise<void> {
-        try {
-            // Wait for the Cloudflare challenge to be solved
-            await this.getLocator(this.cloudFlairIframe).waitFor({state: 'visible'}) // Adjust the timeout as needed
-
-            // Check if the Cloudflare challenge iframe is present
-            const cloudflareIframe = this.page.frame({ name: this.cloudFlairIframe });
-            if (cloudflareIframe) {
-                console.log('Cloudflare challenge detected, waiting for it to be solved...');
-                await cloudflareIframe.waitForSelector('body', { state: 'hidden' });
-                console.log('Cloudflare challenge solved.');
-            }
-        } catch (error) {
-            console.error(`Error handling Cloudflare challenge: ${error}`);
-            await this.makeScreenShot('cloudflare-error');
-            throw error;
-        }
-    }
-
-
     async login(): Promise<MainPage> {
         try {
-            await this.getLocator(this.authRouteButton).click();
-            await this.getLocator(this.loginModale).waitFor({ state: 'visible' });
-            await this.getLocator(this.loginViaMailButton).click();
-            await this.getLocator(this.loginModale).waitFor({ state: 'visible' });
-            await new Promise(resolve => setTimeout(resolve, Math.floor(Math.random() * 4000 + 1000)));
-            await this.getLocator(this.emailInput).fill(this.userLogin);
-            console.log(`User login: ${this.userLogin}`);
-            await new Promise(resolve => setTimeout(resolve, Math.floor(Math.random() * 4000 + 1000)));
-            await this.getLocator(this.passwordInput).fill(this.password);
-            console.log(`User password: ${this.password}`);
-            await this.getLocator(this.submitButton).click();
-            await this.handleCloudflare();
-            await this.getLocator(this.submitButton).click();
-
+            await this.loginButtton.click();
+            this.loginPage = new LoginPage(this.page);
+            await this.loginPage.fillLoginForm()
+            this.headerElement = new HeaderElement(this.page);
+            await this.headerElement.returnToHomePage();
         } catch (error) {
             console.error(`Error during login: ${error}`);
             await this.makeScreenShot('login-error');
