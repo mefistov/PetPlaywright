@@ -1,6 +1,0 @@
-Page was successfully loaded  url: https://rozetka.com.ua/ua/
-Current url loading: about:blank /n Expected url: https://rozetka.com.ua/ua/
-Error navigating to https://rozetka.com.ua/ua/: Error: page.goto: Test ended.
-Call log:
-  - navigating to "https://rozetka.com.ua/ua/", waiting until "networkidle"
-

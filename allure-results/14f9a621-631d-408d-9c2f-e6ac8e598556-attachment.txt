@@ -1,5 +1,0 @@
-url: https://rozetka.com.ua
-Error navigating to https://rozetka.com.ua: Error: page.goto: net::ERR_ABORTED; maybe frame was detached?
-Call log:
-  - navigating to "https://rozetka.com.ua/", waiting until "networkidle"
-
