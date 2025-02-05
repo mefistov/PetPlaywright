@@ -9,7 +9,7 @@ dotenv.config();
 export class MainPage extends BasePage {
     loginPage: LoginPage;
     private pageUrl: string;
-    private loginButtton = this.page.getByRole('button', { name: ' My account' });
+    loginButtton = this.page.getByRole('button', { name: ' My account' });
     headerElement: HeaderElement;
 
     constructor(page: Page) {

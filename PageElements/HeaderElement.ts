@@ -1,9 +1,11 @@
 
 import { Page } from "@playwright/test";
+import { ProductPage } from '../pages/ProductPage';
 
 export class HeaderElement {
     private page: Page;
     searchInput;
+    searchDropdown
     searchButton;
     compareButton;
     wishListButton;
@@ -19,6 +21,7 @@ export class HeaderElement {
     constructor(page: Page){
         this.page = page;
         this.searchInput = this.page.getByRole('textbox', { name: 'Search For Products' });
+        this.searchDropdown = page.locator('.dropdown-menu.autocomplete .product-thumb');
         this.searchButton = this.page.getByRole('button', { name: 'Search' });
         this.compareButton = this.page.getByRole('link', { name: 'Compare', exact: true });
         this.wishListButton = this.page.getByRole('link', { name: 'Wishlist', exact: true });
@@ -38,6 +41,20 @@ export class HeaderElement {
         }
         catch(error){
             console.error(`Error returning to home page: ${error}`);
+            throw error;
+        }
+    }
+
+    async searchForProductAndSelectFirst(product: string): Promise<ProductPage>{
+        try{
+            await this.searchInput.waitFor({state: 'visible'});
+            await this.searchInput.fill(product)
+            await this.searchDropdown.second().click();
+            
+            return new ProductPage(this.page);
+        }
+        catch(error){
+            console.error(`Error searching for product: ${error}`);
             throw error;
         }
     }

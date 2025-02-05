@@ -17,9 +17,17 @@ test.afterAll(async () => {
     await tearDown();
 });
 
-test('base test', async () => {
+test('Login and open home page', async () => {
     const mainPage = new MainPage(page);
     await mainPage.open();
     await mainPage.login();
+
+});
+
+test('Performe initial order', async () =>{
+    const mainPage = new MainPage(page);
+     var headerElement = await new HeaderElement(page);
+    headerElement.searchForProductAndSelectFirst("HTC Touch HD");
+    
 
 });
