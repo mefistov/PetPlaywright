@@ -19,15 +19,16 @@ test.afterAll(async () => {
 
 test('Login and open home page', async () => {
     const mainPage = new MainPage(page);
-    await mainPage.open();
-    await mainPage.login();
-
+    await (await mainPage.open())
+    .login();
 });
 
 test('Performe initial order', async () =>{
     const mainPage = new MainPage(page);
      var headerElement = await new HeaderElement(page);
-    headerElement.searchForProductAndSelectFirst("HTC Touch HD");
+     (await headerElement.searchForProductAndSelectFirst("HTC Touch HD", 3))
+     .clickBuyNow();
+     
     
 
 });

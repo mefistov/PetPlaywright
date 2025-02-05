@@ -22,6 +22,8 @@ export class MainPage extends BasePage {
             await this.page.goto(this.pageUrl, { waitUntil: 'networkidle' });
             console.log(`Page was successfully loaded  url: ${this.pageUrl}`);
             await this.validateUrl(this.pageUrl);
+
+            return this;
         } catch (error) {
             console.error(`Error opening page: ${error}`);
             await this.makeScreenShot('open-error');

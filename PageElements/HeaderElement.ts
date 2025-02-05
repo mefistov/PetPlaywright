@@ -1,7 +1,6 @@
 
 import { Page } from "@playwright/test";
 import { ProductPage } from '../pages/ProductPage';
-
 export class HeaderElement {
     private page: Page;
     searchInput;
@@ -20,8 +19,9 @@ export class HeaderElement {
 
     constructor(page: Page){
         this.page = page;
-        this.searchInput = this.page.getByRole('textbox', { name: 'Search For Products' });
+        this.searchInput = this.page.locator("//header/div[@id='main-header']/div[@id='entry_217820']/div[@id='entry_217822']/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/input[1]");
         this.searchDropdown = page.locator('.dropdown-menu.autocomplete .product-thumb');
+        //this.searchDropDownImage = page.locator(`li:nth-child(3) > .image > a`);
         this.searchButton = this.page.getByRole('button', { name: 'Search' });
         this.compareButton = this.page.getByRole('link', { name: 'Compare', exact: true });
         this.wishListButton = this.page.getByRole('link', { name: 'Wishlist', exact: true });
@@ -45,11 +45,12 @@ export class HeaderElement {
         }
     }
 
-    async searchForProductAndSelectFirst(product: string): Promise<ProductPage>{
+    async searchForProductAndSelectFirst(product: string, option: number): Promise<ProductPage>{
         try{
-            //await this.searchInput.toBeVisible();
+            await this.searchInput.hover();
             await this.searchInput.fill(product)
-            await this.searchDropdown.second().click();
+            await this.searchInput.click();
+            await this.selectAndClickDropDownItemImage(option);
             
             return new ProductPage(this.page);
         }
@@ -58,5 +59,18 @@ export class HeaderElement {
             throw error;
         }
     }
+
+    async selectAndClickDropDownItemImage(option: number): Promise<ProductPage>{
+        try{
+            //await this.page.locator(`li:nth-child(${option}) > .image > a`).hover();
+            await this.page.locator(`li:nth-child(${option}) > .image > a`).click();
+    
+            return new ProductPage(this.page);
+        }
+        catch(error){
+            console.error(`Error selecting drop down image: ${error}`);
+            throw error;
+            }
+        }
 
 }
