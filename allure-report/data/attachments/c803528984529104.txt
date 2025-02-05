@@ -1,0 +1,4 @@
+Error opening page: Error: expect(received).toBe(expected) // Object.is equality
+
+Expected: "https://ecommerce-playground.lambdatest.io"
+Received: "https://ecommerce-playground.lambdatest.io/"

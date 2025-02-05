@@ -1,0 +1,4 @@
+Error searching for product: Error: locator.fill: Target page, context or browser has been closed
+Call log:
+  - waiting for getByRole('textbox', { name: 'Search For Products' })
+

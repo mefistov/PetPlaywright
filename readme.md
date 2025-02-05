@@ -20,13 +20,13 @@ URL=https://ecommerce-playground.lambdatest.io/
 
 
 # Run your tests
-npx playwright test
+npm run test
 
 # Generate the Allure report
-npx allure generate ./allure-results --clean
+npm run allure:report
 
 # Open the Allure report
-npx allure open ./allure-report
+npm run test:allure
 
 
 # Environment Variables

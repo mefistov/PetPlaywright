@@ -1,0 +1,10 @@
+Error during login: Error: locator.click: Target page, context or browser has been closed
+Call log:
+  - waiting for getByRole('button', { name: ' My account' })
+    - locator resolved to <a role="button" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown" class="icon-left both nav-link dropdown-toggle" href="https://ecommerce-playground.lambdatest.io/index.php?route=account/account">…</a>
+  - attempting click action
+    - waiting for element to be visible, enabled and stable
+    - element is visible, enabled and stable
+    - scrolling into view if needed
+    - done scrolling
+

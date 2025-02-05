@@ -1,0 +1,1 @@
+Error searching for product: TypeError: this.searchInput.toBeEditible is not a function

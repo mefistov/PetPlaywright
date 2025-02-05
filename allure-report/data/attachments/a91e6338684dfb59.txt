@@ -1,0 +1,7 @@
+Error searching for product: Error: locator.type: Error: strict mode violation: locator('input[name="search"]') resolved to 2 elements:
+    1) <input value="" type="text" name="search" data-autocomplete="5" aria-label="Search For Products" placeholder="Search For Products" data-autocomplete_route="extension/maza/product/product/autocomplete"/> aka getByRole('textbox', { name: 'Search For Products' })
+    2) <input value="" type="text" name="search" aria-label="Search For Products" placeholder="Search For Products"/> aka locator('#entry_217836').getByPlaceholder('Search For Products')
+
+Call log:
+  - waiting for locator('input[name="search"]')
+

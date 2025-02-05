@@ -1,0 +1,1 @@
+Error searching for product: TypeError: this.searchInput.toBeVisible is not a function

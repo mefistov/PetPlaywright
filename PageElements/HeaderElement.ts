@@ -47,7 +47,7 @@ export class HeaderElement {
 
     async searchForProductAndSelectFirst(product: string): Promise<ProductPage>{
         try{
-            await this.searchInput.waitFor({state: 'visible'});
+            //await this.searchInput.toBeVisible();
             await this.searchInput.fill(product)
             await this.searchDropdown.second().click();
             

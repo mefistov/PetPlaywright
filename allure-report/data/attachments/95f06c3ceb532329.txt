@@ -1,0 +1,2 @@
+Page was successfully loaded  url: https://ecommerce-playground.lambdatest.io
+Current url loading: https://ecommerce-playground.lambdatest.io/ /n Expected url: https://ecommerce-playground.lambdatest.io

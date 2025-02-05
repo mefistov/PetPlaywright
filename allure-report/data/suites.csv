@@ -1,0 +1,4 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","4","Performe initial order","","Wed Feb 05 10:49:20 CET 2025","failed","Wed Feb 05 10:49:20 CET 2025","","tests/base.test.ts","",""
+"","19019","Login and open home page","","Wed Feb 05 10:48:58 CET 2025","passed","Wed Feb 05 10:49:17 CET 2025","","tests/base.test.ts","",""
+"","6294","base test","","Mon Feb 03 16:17:47 CET 2025","passed","Mon Feb 03 16:17:53 CET 2025","","tests/base.test.ts","",""

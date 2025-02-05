@@ -1,0 +1,4 @@
+Page was successfully loaded  url: https://rozetka.com.ua/ua/
+Current url loading: https://rozetka.com.ua/ua/ /n Expected url: https://rozetka.com.ua/ua/
+User login: vlad.seden2@gmail.com
+User password: zfVtXf7!VfZC2!6

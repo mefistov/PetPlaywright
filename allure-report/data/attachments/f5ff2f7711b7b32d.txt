@@ -1,0 +1,16 @@
+Error during login: Error: locator.waitFor: Error: strict mode violation: locator('iframe') resolved to 12 elements:
+    1) <iframe src="https://xl-static.rozetka.com.ua/cds/content.543675.html"></iframe> aka locator('head iframe')
+    2) <iframe width="1" height="1"></iframe> aka locator('body > iframe').first()
+    3) <iframe width="0" height="0"></iframe> aka locator('iframe:nth-child(20)')
+    4) <iframe tabindex="-1" src="about:blank" aria-hidden="true" title="_hjSafeContext" id="_hjSafeContext_80522811"></iframe> aka locator('iframe[title="_hjSafeContext"]')
+    5) <iframe width="0" height="0" frameborder="0" aria-hidden="true" title="Criteo GUM iframe" id="criteo-syncframe-onetag" sandbox="allow-scripts allow-same-origin" src="https://gum.criteo.com/syncframe?topUrl=rozetka.com.ua&origin=onetag#{"bundle":{"identifierExtractor":{"origin":0},"value":null},"cw":true,"optout":{"identifierExtractor":{"origin":0},"value":null},"origin":"onetag","tld":"rozetka.com.ua","topUrl":"rozetka.com.ua","version":"5_31_1","ifa":{"identifierExtractor":{"origin":0},"value":null},…></iframe> aka locator('iframe[title="Criteo GUM iframe"]')
+    6) <iframe width="1" height="1" scrolling="no" frameborder="0" src="https://ams.creativecdn.com/ig-membership?ntk=MuKhKFEbH58Uu7SJrWN3Z8nEnTZ9bUPfGeuh3xQACnaf8Iy1ELqAG4VoTlymO6pSJMsfZYj9Quek7IPp2C30nrBfLRc5Yi3dRrA3b_KUbSs"></iframe> aka locator('iframe:nth-child(39)')
+    7) <iframe width="1" height="1" scrolling="no" frameborder="0" src="https://ams.creativecdn.com/topics-membership?ntk=xsb3OIpGFksTIsnVnFSayiSgmASHkXqWv98hAP-jiiDWH7BoYzdAWc_c1HNQLSakAlJrLZ6lobBVsaPFVk0nfZJJ-Q0-EEPGbqwlKf6mWkY"></iframe> aka locator('iframe:nth-child(40)')
+    8) <iframe width="1" height="1" scrolling="no" frameborder="0" src="https://ams.creativecdn.com/ig-membership?ntk=MuKhKFEbH58Uu7SJrWN3Z8nEnTZ9bUPfGeuh3xQACnaf8Iy1ELqAG4VoTlymO6pSJMsfZYj9Quek7IPp2C30nrBfLRc5Yi3dRrA3b_KUbSs"></iframe> aka locator('iframe:nth-child(42)')
+    9) <iframe width="1" height="1" scrolling="no" frameborder="0" src="https://ams.creativecdn.com/topics-membership?ntk=xsb3OIpGFksTIsnVnFSayiSgmASHkXqWv98hAP-jiiDWH7BoYzdAWc_c1HNQLSakAlJrLZ6lobBVsaPFVk0nfZJJ-Q0-EEPGbqwlKf6mWkY"></iframe> aka locator('iframe:nth-child(43)')
+    10) <iframe width="1" height="1" scrolling="no" frameborder="0" src="https://ams.creativecdn.com/ig-membership?ntk=MuKhKFEbH58Uu7SJrWN3Z8nEnTZ9bUPfGeuh3xQACnaf8Iy1ELqAG4VoTlymO6pSJMsfZYj9Quek7IPp2C30nrBfLRc5Yi3dRrA3b_KUbSs"></iframe> aka locator('iframe:nth-child(45)')
+    ...
+
+Call log:
+  - waiting for locator('iframe') to be visible
+

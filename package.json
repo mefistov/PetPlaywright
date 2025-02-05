@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npx playwright test",
+    "allure:report": "npx allure generate ./allure-results --clean && npx allure open ./allure-report",
+    "test:allure": "npm run test && npm run allure:report"
   },
   "keywords": [],
   "author": "",
@@ -15,6 +17,9 @@
     "allure-playwright": "^3.1.0"
   },
   "dependencies": {
-    "dotenv": "^16.4.7"
+    "dotenv": "^16.4.7",
+    "@playwright/test": "^1.15.0",
+    "allure-playwright": "^2.0.0",
+    "allure-commandline": "^2.13.8"
   }
 }

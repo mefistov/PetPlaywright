@@ -1,0 +1,6 @@
+Error searching for product: Error: locator.type: Target page, context or browser has been closed
+Call log:
+  - waiting for locator('input[name="search"]').first()
+    - locator resolved to <input value="" type="text" name="search" data-autocomplete="5" aria-label="Search For Products" placeholder="Search For Products" data-autocomplete_route="extension/maza/product/product/autocomplete"/>
+  - elementHandle.type("HTC Touch HD")
+
