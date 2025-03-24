@@ -1,4 +1,0 @@
-Error opening page: Error: expect(received).toBe(expected) // Object.is equality
-
-Expected: "https://hotline.ua"
-Received: "https://hotline.ua/"

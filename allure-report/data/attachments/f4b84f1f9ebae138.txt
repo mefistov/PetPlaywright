@@ -1,4 +1,0 @@
-Error searching for product: Error: locator.type: Target page, context or browser has been closed
-Call log:
-  - waiting for locator('input[name="search"]').first()
-

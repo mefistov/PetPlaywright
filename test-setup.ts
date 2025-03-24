@@ -23,7 +23,7 @@ export const setup = async () => {
 
 export const tearDown = async () => {
     await page.close();
-    await context.clearCookies();
+  
     await context.close();
     await browser.close();
 }

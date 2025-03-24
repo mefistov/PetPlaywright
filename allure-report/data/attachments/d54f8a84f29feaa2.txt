@@ -1,1 +1,0 @@
-Error searching for product: TypeError: this.searchInput.waitForElementState is not a function

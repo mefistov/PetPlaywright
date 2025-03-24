@@ -1,8 +1,0 @@
-Error searching for product: Error: locator.fill: Target page, context or browser has been closed
-Call log:
-  - waiting for getByRole('textbox', { name: 'Search For Products' })
-    - locator resolved to <input value="" type="text" name="search" data-autocomplete="5" aria-label="Search For Products" placeholder="Search For Products" data-autocomplete_route="extension/maza/product/product/autocomplete"/>
-    - fill("HTC Touch HD")
-  - attempting fill action
-    - waiting for element to be visible, enabled and editable
-

@@ -26,8 +26,8 @@ test('Login and open home page', async () => {
 test('Performe initial order', async () =>{
     const mainPage = new MainPage(page);
      var headerElement = await new HeaderElement(page);
-     (await headerElement.searchForProductAndSelectFirst("HTC Touch HD", 3))
-     .clickBuyNow();
+     var productPage = await headerElement.searchForProductAndSelectFirst("HTC Touch HD", 3);
+     await productPage.clickBuyNow();    
      
     
 

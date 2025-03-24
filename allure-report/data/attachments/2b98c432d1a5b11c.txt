@@ -1,4 +1,0 @@
-Page was successfully loaded  url: https://rozetka.com.ua/ua/
-Current url loading: https://rozetka.com.ua/ua/ /n Expected url: https://rozetka.com.ua/ua/
-User login: 
-User password: 

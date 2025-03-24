@@ -1,7 +1,7 @@
 import {defineConfig} from '@playwright/test';
 
 export default defineConfig({
-    retries: 2,
+    retries: 0,
     maxFailures: 3,
     use: {
         //browserName: 'chromium',
@@ -16,3 +16,4 @@ export default defineConfig({
     ],
     timeout: 30000, // 30 seconds 
 });
+

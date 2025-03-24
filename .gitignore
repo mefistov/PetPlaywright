@@ -4,3 +4,4 @@ dist/
 allure-results/
 screenShots/
 allure-report/
+test-results/
